@@ -1,12 +1,14 @@
 <DOCTYPE! html>
 <html>
+	<header>
 	<title>Homework2</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="w3.css">
 	<link rel="stylesheet" href="bandtemplate.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+	<link href="https://fonts.googleapis.com/css?family=Ek+Mukta" rel="stylesheet">
+
 	<style>
 		img {
 			margin-bottom: -7px
@@ -14,10 +16,24 @@
 		.w3-row-padding img {
 			margin-bottom: 12px
 		}
-	</style>
 
-	<body>
-	
+		/* for mobile position */
+		.position {
+			display: block;
+			margin: auto;
+		}
+		
+		/* Desktop */
+		@media screen and (min-width: 480px) {
+		 .position {
+		 	width: 30%; max-width: 150px; float: right;
+		 	}
+		 }
+
+	</style>
+	</header>
+	<body style="font-family: Ek Mukta;">
+
 	<div class="w3-container w3-padding-64 w3-light-grey w3-xlarge">
 	</div>
 
@@ -39,19 +55,26 @@
 	</div>
 
 	<!--Work Experience Section-->
-	<div class="w3-container w3-content w3-center w3-padding-64" style="max-width: 800px">
+	<div class="w3-card-2 w3-container w3-content w3-center w3-padding-64" style="max-width: 800px">
 		<h2 class="w3-wide w3-justify"><i class="fa fa-suitcase w3-margin-right" style="color: gray"></i>Work Experience</h2>
-		<p class="w3-justify">First paragraph goes here. Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+		<h4 class="w3-justify">Web Developer in Training...</h4>
+		<h6 class="w3-justify w3-opacity"><i class="fa fa-globe w3-margin-right"></i>2017 to present</h6>
+		<p class="w3-justify">Creating simple sites to keep people entertained</p>
+		<h4 class="w3-justify">Yelp</h4>
+		<h6 class="w3-justify w3-opacity"><i class="fa fa-globe w3-margin-right"></i>2015 to present</h6>
+		<p class="w3-justify">Building systems to keep people paid</p>
 	</div>
-
+	<br>
+	<br>
 	<!--Education Section-->
 	<div class="w3-card-2 w3-container w3-content w3-center w3-padding-64" style="max-width: 800px">
 		<h2 class="w3-wide w3-justify"><i class="fa fa-book w3-margin-right" style="color: gray"></i>Education</h2>
 		<h4 class="w3-justify">University of Georgia</h4>
 		<h6 class="w3-justify w3-opacity"><i class="fa fa-calendar w3-margin-right"></i>2008 - 2012</h6>
-		<p class="w3-justify w3-opacity">Bachelor of Arts | Linguistics</p>
+		<p class="w3-justify w3-opacity"><i>Bachelor of Arts</i> | Linguistics</p>
 	</div>
-		
+	<br>
+	<br>
 		<!-- Footer -->
 		<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
 		  <i class="fa fa-send"></i>
