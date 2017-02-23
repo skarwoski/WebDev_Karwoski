@@ -1,0 +1,10 @@
+/*
+	Theme Name: Twentysixteen Child
+	Template: twentysixteen
+	*/
+	
+	/* Considered bad form to import CSS but will work in a pinch */
+	@import url ("..themes/twentysixteen/style.css")
+
+
+
