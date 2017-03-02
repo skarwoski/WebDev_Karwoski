@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>Order Form</title>
+
+       <script>
+        var x;
+        x = 7+3;
+        document.getElementById('test').innerHTML = x;
+
+        var unNamed;
+        document.getElementById('unknown').innerHTML = unNamed;
+
+        function validateForm() {
+            var x = document.forms['myForm']['fname'].value;
+            if (x == '') {
+                alert("Name missing");
+                return false;
+            }
+        }
+
+        /*These variables are declaring the quantity available for purchase.
+        function myQuantity() {
+            var hoodie = document.getElementById('hoodie').value;
+            document.getElementById('subTotal').innerHTML = hoodie;
+            var sunnies = document.getElementById('sunnies').value;
+            document.getElementById('subTotal2').innerHTML = sunnies;
+            var y = document.getElementById('finalTotal').innerHTML = hoodie * * sunnies * 10;
+        }*/
+
+        function myQuantity() {
+            var items = ['hoodie_', 'sunnies_', 'tshirt_',];
+            var priceStr = 'price';
+            var quantityStr = 'quantity';
+            var subtotalStr = 'subtotal';
+            var shipping = 5.00;
+            var total = 0;
+            for (var i=0; i < items.length; i++) {
+                var price = document.getElementById(items[i] + priceStr).value;
+                var quantity = document.getElementById(items[i] + quantityStr).value;
+                document.getElementById(items[i] + subtotalStr)
+                .innerHTML = parseInt(price) * parseInt(quantity);
+                total += shipping + ((price * quantity) + ((price * quantity)*.1));
+            }
+            document.getElementById('finalTotal').innerHTML = total;
+        }
+
+        //Function to delete an item previously selected.
+        function disable() {
+            document.getElementById('delete').disabled=true;
+        }
+        function enable() {
+            document.getElementById('delete').disabled=false;
+        }
+
+       </script>
+
+    </head>
+
+    <body>
+        <h3>Merch Booth</h3>
+
+
+        <div style="margin: 64px; float: left">
+            <p>
+                <span>Hoodie</span>
+                <br>
+                <span>Price: $20.00</span>
+                <input type="hidden" id="hoodie_price" value="20.00">
+                <select id="hoodie_quantity" name="hoodie_quantity" size="1">
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                    <button type="button" onclick="disable()">Delete</button>
+                    <button type="button" onclick="enable()">Add</button>
+                    <button onclick="myQuantity()">SubTotal</button>
+                <input type="hidden" id="hoodie_subtotal">
+            </p>
+            <p>
+                <span>Sunglasses</span>
+                <br>
+                <span>Price: $15.00</span>
+                <input type="hidden" id="sunnies_price" value="15.00">
+                <select id="sunnies_quantity" name="sunnies_quantity" size="1">
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                    <button type="button" onclick="disable()">Delete</button>
+                    <button type="button" onclick="enable()">Add</button>
+                    <button onclick="myQuantity()">SubTotal</button>
+                <span id="sunnies_subtotal"></span>
+            </p>
+            <p>
+                <span>T-Shirt</span>
+                <br>
+                <span>Price: $10.00</span>
+                <input type="hidden" id="tshirt_price" value="10.00">
+                <select id="tshirt_quantity" name="tshirt_quantity" size="1">
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                    <button type="button" onclick="disable()">Delete</button>
+                    <button type="button" onclick="enable()">Add</button>
+                    <button onclick="myQuantity()">SubTotal</button><br>
+                <span id="tshirt_subtotal"></span>
+            </p>
+
+            <div>
+                <span>Final Total + $5.00 Shipping: </span>
+                <button type="button" onclick="myQuantity()">Submit</button>
+                <p id="finalTotal"></p>
+            </div>
+        </div>
+
+        <div>
+            <p id="unknown"></p>
+        </div>
+
+        <div style="margin: 64px; float: right">
+            <form action="action_page.php">
+                First Name: <input type="text">
+                <br>
+                Last Name:  <input type="text">
+
+                <h4>Address:</h4>
+                <br>
+                First Line:     <input type="text" style="margin: 32px;"> <br>
+                Apt., Suite #:  <input type="text" style="margin: 32px;"> <br>
+                City:           <input type="text">
+                State:          <input type="text"> <br>
+                Postal Code:    <input type="number">
+            </form>
+        </div>
+    </body>
+</html>
